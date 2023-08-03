@@ -25,12 +25,17 @@ const Left=styled(Box)`
     flex: 1;
 `
 
-const Logo=styled('img')({
+
+
+const Logo=styled('img')(({theme})=>({
     display:"flex",
     alignItems:'center',
     justifyContent:'center',
     width:"8vh",
-})
+    [theme.breakpoints.down('sm')]:{
+        width:"7vh",
+    }
+}))
     
 
 

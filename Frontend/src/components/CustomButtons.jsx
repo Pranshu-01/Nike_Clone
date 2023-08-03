@@ -39,28 +39,31 @@ const SearchContainer=styled(Box)(({theme})=>({
 }))
     
 
-const SearchIcon=styled(Box)`
-    /* width: 20px;
-    height: 20px;
-    &:hover{
-        background-color: gray;
-        border-radius: 50%;
-        padding: 5px;
-    } */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-    padding: 0px 10px;
-`
+const SearchIcon=styled(Box)(({theme})=>({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: "10px",
+    padding: "0px 10px",
+    [theme.breakpoints.down('sm')]:{
+        marginRight: "0px",
+        padding: "0px 10px",
+    }
+}))
 
-const StyledInputBase=styled(InputBase)`
-    font-size: 15px;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
+
+const StyledInputBase=styled(InputBase)(({theme})=>({
+    fontSize: "15px",
+    fontWeight: "600",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    [theme.breakpoints.down('sm')]:{
+        fontSize: "12.5px",
+    }
+}))
+    
+
 
 const MenuItem=styled(Box)`
     display: flex;

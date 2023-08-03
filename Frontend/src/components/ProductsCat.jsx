@@ -27,7 +27,7 @@ const Container=styled(Box)(({theme})=>({
     // justify-content: space-between; */
 
 
-const ProductsCat = ({category,filters,sort}) => {
+const ProductsCat = ({category,filters,sort,open}) => {
   const [products,setProducts]=useState([]);
   const [filteredProducts,setFilteredProducts]=useState([]);
   // console.log(filters);
@@ -81,7 +81,7 @@ const ProductsCat = ({category,filters,sort}) => {
               filteredProducts.map((item)=>{
                 return (
                   <>
-                    <ProductCat item={item} key={item._id}/>
+                    <ProductCat item={item} key={item._id} open={open}/>
                   </>
                 )
               }))

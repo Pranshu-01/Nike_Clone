@@ -1,6 +1,7 @@
-import { Box, ImageList, ImageListItem, styled } from '@mui/material'
+import { Box, ImageList, ImageListItem, styled, useMediaQuery } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useTheme } from '@mui/material/styles';
 
 
 const Container=styled(Box)`
@@ -21,6 +22,7 @@ const Wrapper=styled(Container)(({theme})=>({
     },
     [theme.breakpoints.down('md')]:{
         margin: "8px 0px",
+        
     }
 }))
     
@@ -32,6 +34,9 @@ const Image=styled('img')(({theme})=>({
     objectFit:"cover",
     [theme.breakpoints.down('md')]:{
         height:"60vh"
+    },
+    [theme.breakpoints.down('sm')]:{
+        height:"35vh",
     }
 }))
     
@@ -91,14 +96,18 @@ const MRP=styled(Box)`
     color:#696969;
 `
 
-const ProductCat = ({item}) => {
+const ProductCat = ({item,open}) => {
+    console.log(open)
+    const theme=useTheme();
+    const small = useMediaQuery(theme.breakpoints.down('sm'));
    
   return (
     <>
         <Container>
             <Link to={`/product/${item._id}`} style={{textDecoration:"none"}}>
             <Wrapper>
-                <Image src={item.img.color1[0]} alt="" />  
+                {open===true && !small ? <Image style={{height:"28vw"}} src={item.img.color1[0]} alt="" /> : <Image src={item.img.color1[0]} alt="" />}
+                {/* <Image src={item.img.color1[0]} alt="" />   */}
             <Info>
                 {
                     item.heading && (

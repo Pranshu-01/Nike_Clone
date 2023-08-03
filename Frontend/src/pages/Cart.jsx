@@ -58,6 +58,10 @@ const Image = styled('img')(({ theme }) => ({
 	height: '160px',
 	objectFit: 'cover',
 	cursor: 'pointer',
+	[theme.breakpoints.down('sm')]:{
+		width:"75px",
+		height:"70px"
+	}
 }));
 
 const Info = styled(Box)`
