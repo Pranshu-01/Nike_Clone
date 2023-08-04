@@ -71,13 +71,15 @@ const MenuItem=styled(Box)`
     justify-content: center;
 `
 
-const MenuItemIcon=styled(Box)`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 25px;
-    position: relative;
-`
+const MenuItemIcon=styled(Box)(({theme})=>({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginLeft: "25px",
+    position: "relative"
+}))
+   
+
 
 const MenuItemQuantity=styled(Box)`
     position: absolute;
