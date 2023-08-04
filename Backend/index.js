@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 app.use(cors({
     origin:'*',
     credentials:"true",
-    allowedHeaders: ['Content-Type'],
+    allowedHeaders: ['https://violet-fawn-robe.cyclic.app/api/','https://nikein.netlify.app/'],
     exposedHeaders: ['Content-Type']
 }));
 
