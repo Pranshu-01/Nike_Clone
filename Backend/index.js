@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 const cors=require('cors');
 
 app.use(cors({
-    origin:'https://nikein.netlify.app/',  
+    origin:'https://nikein.netlify.app',  
 }));
 
 const dotenv=require('dotenv');
