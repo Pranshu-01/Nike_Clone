@@ -60,7 +60,7 @@ const Image = styled('img')(({ theme }) => ({
 	cursor: 'pointer',
 	[theme.breakpoints.down('sm')]:{
 		width:"100px",
-		height:"120px"
+		height:"100px"
 	}
 }));
 
