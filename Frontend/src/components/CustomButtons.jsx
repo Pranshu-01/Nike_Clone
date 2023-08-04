@@ -59,7 +59,7 @@ const StyledInputBase=styled(InputBase)(({theme})=>({
     justifyContent: "center",
     alignItems: "center",
     [theme.breakpoints.down('sm')]:{
-        fontSize: "12.5px",
+        fontSize: "10px",
     }
 }))
     
