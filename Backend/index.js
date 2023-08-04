@@ -29,9 +29,9 @@ app.use((req, res, next) => {
 
 app.use(cors({
     origin:'*',
-    // credentials:"true",
-    // allowedHeaders: ['Content-Type'],
-    // exposedHeaders: ['Content-Type']
+    credentials:"true",
+    allowedHeaders: ['Content-Type'],
+    exposedHeaders: ['Content-Type']
 }));
 
 const dotenv=require('dotenv');
