@@ -15,23 +15,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 const cors=require('cors');
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', '*');
-    res.header('Access-Control-Request-Headers', '*');
-    if (req.method === "OPTIONS") {
-      res.header('Access-Control-Allow-Methods', '*');
-      return res.status(200).json({});
-    }
-    next();
-  });
-
-
 app.use(cors({
-    origin:'*',
-    credentials:"true",
-    allowedHeaders: ['https://violet-fawn-robe.cyclic.app/api/','https://nikein.netlify.app/'],
-    exposedHeaders: ['Content-Type']
+    origin:'https://nikein.netlify.app/',  
 }));
 
 const dotenv=require('dotenv');
