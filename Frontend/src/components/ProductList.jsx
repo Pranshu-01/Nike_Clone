@@ -204,6 +204,7 @@ const ProductList = () => {
 	const [filters, setFilters] = useState({});
 	const [sort, setSort] = useState('');
 	const [bottomStyle,setBottomStyle]=useState({});
+	const [filterText,setFilterText]=useState("Show Filters");
 	// console.log(size + color + sort);
 
 	const handleChange = (e) => {
@@ -232,12 +233,12 @@ const ProductList = () => {
 	const handleToggle = () => {
 		if (open === false) {
 			setOpen(true);
-			// setBottomStyle({display:"flex"})
-			// setcollapseOpientation("horizontal")
+			setFilterText("Hide Filters");
+			
 		} else {
 			setBottomStyle({})
 			setOpen(false);
-			// setcollapseOpientation("vertical")
+			setFilterText("Show Filters");
 		}
 	};
 
@@ -255,7 +256,7 @@ const ProductList = () => {
 						<FilterContainer>
 							<Box style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', fontSize:"18px" }} onClick={handleToggle}>
 								<Box>
-									Show Filters
+									{filterText}
 								</Box>
 								<CollapseIcon>
 									<TuneSharp  onClick={handleToggle} style={{display:"flex", alignItems: 'center', fontSize:"22px",marginLeft:"6px"}}/>
@@ -284,7 +285,10 @@ const ProductList = () => {
 					</Top>
 					<Bottom style={bottomStyle}>
 						 {(<BottomCollapse>
-							<Collapse in={open} orientation="horizontal">
+							<Collapse in={open} orientation="horizontal" easing={{
+								enter: "ease",
+								exit: "ease"
+							}}>
 								<Box
 								>
 									<CollapseInfo>
