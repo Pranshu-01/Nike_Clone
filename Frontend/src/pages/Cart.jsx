@@ -59,7 +59,7 @@ const Image = styled('img')(({ theme }) => ({
 	objectFit: 'cover',
 	cursor: 'pointer',
 	[theme.breakpoints.down('sm')]:{
-		width:"140px",
+		width:"100px",
 		height:"120px"
 	}
 }));
