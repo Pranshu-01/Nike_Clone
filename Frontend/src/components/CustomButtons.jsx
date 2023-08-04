@@ -82,7 +82,7 @@ const MenuItemIcon=styled(Box)`
 const MenuItemQuantity=styled(Box)`
     position: absolute;
     text-align: center;
-    top:7px;
+    top:7.2px;
     font-size: 12px;
     font-weight: bolder;
 `
