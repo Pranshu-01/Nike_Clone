@@ -114,6 +114,12 @@ const Login = () => {
         password:""
     });
 
+    //email:""
+    // password:""
+
+    //email:"pranshugoyal01@gmail.com"
+    //password:"12345"
+
     const handleChange=(e)=>{
         setData({...data,[e.target.name]:e.target.value});
         console.log(data);
